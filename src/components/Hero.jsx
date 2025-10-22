@@ -29,10 +29,10 @@ export default function Hero({
                     className="bg-green-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-green-700 transition">
                         {ctaPrimary.label}
                     </Link>
-                    <a href={ctaSecondary.href}
+                    <Link to="/products"
                     className="border border-greem-600 text-green-600 px-6 py-3 rounded-md text-lg font-medium hover:bg-green-50 transition">
                         {ctaSecondary.label}
-                    </a>
+                    </Link>
                 </div>
                 </div>
 
