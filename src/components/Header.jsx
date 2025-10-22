@@ -51,7 +51,8 @@ export default function Header({
                             </Link>
                         )
                     })}
-                    <a href={cta.href} className="ml-2 bg-green-600 text-gray-100 px-4 py-2 rounded-md text-sm">{cta.label}</a>
+                    {/* <a href={cta.href} className="ml-2 bg-green-600 text-gray-100 px-4 py-2 rounded-md text-sm">{cta.label}</a> */}
+                    <Link to='/contact' className="ml-2 bg-green-600 text-gray-100 px-4 py-2 rounded-md text-sm">{cta.label}</Link>
                 </nav>
 
 
