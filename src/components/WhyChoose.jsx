@@ -1,4 +1,4 @@
-
+import { motion } from 'motion/react'
 
 export default function WhyChooseUs({
     title = "Why Choose Us",
@@ -48,11 +48,16 @@ export default function WhyChooseUs({
                 {/* Features Grid */}
                 <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
                     {features.map((feature, index) => (
-                        <div key={index} className="text-center p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition">
+                        <motion.div
+                          initial={{opacity: 0, y:50}}
+                          whileInView={{opacity: 1, y:0}}
+                          viewport={{once: true}}
+                          transition={{duration: 0.5, delay: index* 0.1}}
+                           key={index} className="text-center p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition">
                             <div className="text-4xl mb-4">{feature.icon}</div>
                             <h3 className="text-lg font-semibold mb-2">{feature.heading}</h3>
                             <p className="text-gray-600 text-sm">{feature.text}</p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

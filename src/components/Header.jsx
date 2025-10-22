@@ -14,7 +14,7 @@ export default function Header({
         { href: "/about", label: "About" },
         { href: "/contact", label: "Contact" },
     ],
-    cta = {label: "Get a Quote", href: "#contact"}
+    cta = {label: "Get a Quote", href: "contact"}
 }){
     const [open, setOpen] = useState(false);
 
@@ -29,6 +29,7 @@ export default function Header({
         <header className="bg-white shadow-sm sticky top-0 left-0 w-full z-50">
             <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
                 {/* Logo */}
+                <a href="/">
                 <div className="flex items-center gap-3">
                     <img
                         src={logosrc}
@@ -39,12 +40,13 @@ export default function Header({
                         <p className="text-xs text-gray-500">{tagline}</p>
                     </div>
                 </div>
+                </a>
 
                 {/* Desktop mode */}
                 <nav className="hidden md:flex gap-6 items-center text-sm">
                     {links.map((l) => {
                         return (
-                            <Link key={l.href} to={l.href} className="hover:text-green-600 ">
+                            <Link key={l.href} to={l.href} className="block ">
                                 {l.label}
                             </Link>
                         )
@@ -70,7 +72,7 @@ export default function Header({
                 <div className="md:hidden border-t">
                     <div className="px-6 py-4 space-y-3">
                         {links.map((l) => {
-                            return <a key={l.href} href={l.href} className="block">{l.label}</a>
+                            return <Link key={l.href} href={l.href} className="block" onClick={() => setOpen(false)}>{l.label}</Link>
                         })}
                         <a href={cta.href} className="block w-full text-center bg-green-600 text-white px-4 py-2 rounded-md">{cta.label}</a>
                     </div>

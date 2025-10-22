@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 
 const services = [
   {
@@ -25,14 +26,18 @@ const ServicesPreview = () => {
         <h2 className="text-3xl font-bold mb-12">Our Services</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
+            <motion.div
+              initial={{opacity: 0, y:50}}
+              whileInView={{opacity: 1, y:0}}
+              viewport={{once: true}}
+              transition={{duration: 0.5, delay: index* .1}}
               key={index}
               className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition-all"
             >
               <div className="text-5xl mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

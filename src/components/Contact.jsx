@@ -30,24 +30,28 @@ export default function Contact({
                 </div>
 
                 {/* Contact Form */}
-                <form className="bg-white p-8 rounded-lg shadow-md space-y-6">
+                <form className="bg-white p-8 rounded-lg shadow-md space-y-6" action="https://formspree.io/f/xnngknez" method="POST">
                     <div>
                         <label className="block text-sm font-medium mb-1" htmlFor="name">
                             Name
                         </label>
-                        <input id="name" type="text" placeholder="Your Name" className="w-full border border-gray-300 rounded-md p-2 focus:border-green-600 focus:ring-green-100" />
+                        <input id="name" name="name" type="text" placeholder="Your Name" className="w-full border border-gray-300 rounded-md p-2 focus:border-green-600 focus:ring-green-100" />
                     </div>
                     <div>
                         <label className="block text-sm font-medium mb-1" htmlFor="email">
                             Email
                         </label>
-                         <input id="email" type="email" placeholder="Your Email" className="w-full border border-gray-300 rounded-md p-2 focus:border-green-600 focus:ring-green-100" />
+                         <input id="email" type="email" placeholder="Your Email" name="email" className="w-full border border-gray-300 rounded-md p-2 focus:border-green-600 focus:ring-green-100" />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium mb-1" htmlFor="number">Phone No.</label>
+                        <input id="number" type="number" placeholder="Your Contact Number" className="w-full border border-gray-300 rounded-md p-2 focus:border-green-600 focus:ring-green-100" name="phone" />
                     </div>
                     <div>
                         <label className="block text-sm font-medium mb-1" htmlFor="message">
                             Message
                         </label>
-                        <textarea id="message" rows={4} placeholder="Tell us about your project..." className="w-full border border-gray-300 rounded-md p-2 focus:border-green-600 focus:ring-green-100" />
+                        <textarea name="message" id="message" rows={4} placeholder="Tell us about your project..." className="w-full border border-gray-300 rounded-md p-2 focus:border-green-600 focus:ring-green-100" />
                         <div className="pt-5">
                             <button
                                 type="submit"

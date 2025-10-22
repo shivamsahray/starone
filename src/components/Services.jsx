@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Leaf, Truck } from "lucide-react"; // lucide-react icons
-
+import { motion } from "motion/react"
 
 export default function Services({
     title = "Our Services",
@@ -32,11 +32,17 @@ export default function Services({
                 {/* Services grid */}
                 <div className="grid gap-10 md:grid-cols-3">
                     {items.map((service, index) => (
-                        <div key={index} className="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                        <motion.div 
+                            whileHover={{scale: 1.1}} whileTap={{ scale: 0.9}}
+                             key={index} className="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition" 
+                            initial={{opacity:0, y:50}}
+                            whileInView={{opacity: 1, y:0}}
+                            viewport={{once: true   }}
+                            transition={{duration: 0.5, delay: index * .1}}>
                             <div className="mb-4">{service.icon}</div>
                             <h3 className="text-xl font-semibold mb-2">{service.heading}</h3>
                             <p className="text-gray-600">{service.text}</p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

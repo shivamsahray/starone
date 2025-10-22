@@ -3,8 +3,8 @@ export default function Hero({
     title = "Sustainable Packaging Solutions",
     subtitle = "Custom | Reliable | Eco-friendly",
     description = "We provide innovative packaging solutions tailored to your business needs — designed to protect your products and the planet.",
-    ctaPrimary = {label: "Get a Quote", href:"#contact"},
-    ctaSecondary = {label : "Our Products", href: "#products"},
+    ctaPrimary = {label: "Get a Quote", href:"contact"},
+    ctaSecondary = {label : "Our Products", href: "products"},
     imageSrc= "hero-image.png",
 }){
     return (
